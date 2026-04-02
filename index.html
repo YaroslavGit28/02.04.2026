@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Посты с API — уровень 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page">
+    <header class="header">
+      <h1>Посты (собственное API)</h1>
+      <p class="header__hint">Данные хранятся в браузере. Можно добавлять, редактировать, удалять.</p>
+    </header>
+
+    <!-- Форма для добавления/редактирования -->
+    <form id="postForm" class="post-form" hidden>
+      <h3 id="formLabel">Добавить пост</h3>
+      <div class="form-group">
+        <label>Заголовок</label>
+        <input type="text" id="formTitle" class="form-input" placeholder="Введите заголовок">
+      </div>
+      <div class="form-group">
+        <label>Текст</label>
+        <textarea id="formBody" class="form-textarea" placeholder="Введите текст поста" rows="4"></textarea>
+      </div>
+      <div class="form-buttons">
+        <button type="button" id="formCancelBtn" class="btn">Отмена</button>
+        <button type="submit" id="formSubmitBtn" class="btn btn--primary">Добавить пост</button>
+      </div>
+    </form>
+
+    <section class="toolbar" aria-label="Управление">
+      <button type="button" id="btnLoad" class="btn btn--primary">Загрузить</button>
+      <button type="button" id="btnAdd" class="btn">➕ Добавить пост</button>
+      <label class="search">
+        <span class="search__label">Поиск по заголовку</span>
+        <input type="search" id="search" class="search__input" placeholder="Введите слово..." autocomplete="off">
+      </label>
+      <button type="button" id="btnReset" class="btn">Сбросить фильтр</button>
+      <button type="button" id="btnClear" class="btn">Очистить все</button>
+    </section>
+
+    <p id="loading" class="status status--load" hidden>Загрузка…</p>
+    <p id="error" class="status status--error" " hidden></p>
+
+    <main id="cards" class="cards"></main>
+  </div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
